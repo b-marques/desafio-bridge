@@ -1,5 +1,6 @@
 import urllib.request
 import json
+import re
 from django.http import JsonResponse
 from django.core import serializers
 
@@ -14,8 +15,29 @@ def GITHUB_USER_REPOS_API_LINK(user):
 
 def fetch_repos(request):
     search_term = str(request.GET.get('name')).replace(" ", "+")
-    with urllib.request.urlopen(GITHUB_REPOS_API_LINK(search_term)) as url:
+    page = "&page=" + str(request.GET.get('page')).replace(" ", "+")
+    with urllib.request.urlopen(GITHUB_REPOS_API_LINK(search_term) + page) as url:
+        pages = {}
+        if url.info()['Link'] != None:
+            links_list = url.info()['Link'].split(', ')
+            for link in links_list:
+                result = re.search('rel="(.*)"', link).group(1)
+                page_number = int(re.search('page=(.*)>', link).group(1))
+                if result == 'prev':
+                    pages['prev'] = page_number
+                    continue
+                if result == 'next':
+                    pages['next'] = page_number
+                    continue
+                if result == 'first':
+                    pages['first'] = page_number
+                    continue
+                if result == 'last':
+                    pages['last'] = page_number
+                    continue
+
         responseData = json.loads(url.read().decode())
+        responseData['pages'] = pages
         return JsonResponse(responseData)
 
 
