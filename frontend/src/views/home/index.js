@@ -74,11 +74,14 @@ class Home extends React.Component {
           ) : (
             Object.keys(this.state.items).map(key => (
               <RepoCard
-                key={key}
+                key={this.state.items[key].id}
                 name={this.state.items[key].name}
                 author={this.state.items[key].owner.login}
                 description={this.state.items[key].description}
                 stars={this.state.items[key].stargazers_count}
+                issues={this.state.items[key].open_issues_count}
+                language={this.state.items[key].language}
+                created_at={this.state.items[key].created_at}
               />
             ))
           )}
