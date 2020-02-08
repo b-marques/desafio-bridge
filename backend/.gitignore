@@ -94,7 +94,7 @@ target/
 .venv
 
 # environ file
-**/local.env
+#**/local.env
 
 # celery beat schedule file
 celerybeat-schedule
