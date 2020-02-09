@@ -9,6 +9,7 @@ import {
   ListGroup,
   ListGroupItem
 } from "reactstrap";
+import formatDate from "../../utils/formatDate";
 import "./styles.css";
 
 class RepoCard extends React.Component {
@@ -80,7 +81,8 @@ class RepoCard extends React.Component {
                   <strong>Linguagem:</strong> {this.props.language}
                 </Col>
                 <Col className="text-right" xs="auto">
-                  <strong>Criado em:</strong> {this.props.created_at}
+                  <strong>Criado em: </strong>
+                  {formatDate(this.props.created_at)}
                 </Col>
                 <Col sm="6">
                   <strong>Outros repositórios:</strong>
