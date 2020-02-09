@@ -1,4 +1,4 @@
-# Desafio Bridge Full Stack
+# Desafio Bridge Full Stack v1.0.0
 
 Código relacionado ao desafio para a vaga de desenvolvedor Full Stack.
 Estruturado da seguinte forma:
