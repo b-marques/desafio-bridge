@@ -1,4 +1,4 @@
-# Desafio Bridge Full Stack v1.0.0
+# Desafio Bridge Full Stack v1.0.1
 
 Código relacionado ao desafio para a vaga de desenvolvedor Full Stack.
 Estruturado da seguinte forma:
@@ -23,6 +23,8 @@ O `Django` é executado dentro de um _container_ nomeado `backend`, e escuta na 
 Usa o framework React, e faz requisições de dados ao `backend` para renderizá-los no _client side_.
 
 Foi utilizado o `create-react-app` para iniciar o projeto. Assim como o `backend`, também faz o uso de arquivo com variáveis de ambiente, porém com o auxílio da biblioteca `dotenv`.
+
+Para estilização da interface de usuário foi utilizada a biblioteca `reactstrap` que implementa o bootstrap como componentes do React.
 
 Executa dentro de um _container_ nomeado `frontend` e escuta na porta 3000 mapeada para a porta 3000 da máquina _host_.
 
