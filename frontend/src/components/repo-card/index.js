@@ -26,7 +26,6 @@ class RepoCard extends React.Component {
       .then(res => res.json())
       .then(
         result => {
-          console.log(result);
           this.setState({
             isLoaded: true,
             user_repos: result,
@@ -50,7 +49,6 @@ class RepoCard extends React.Component {
     if (this.state.user_repos === undefined) {
       this.fetchUserRepos();
     }
-    console.log(this.state.user_repos);
     this.setState({ collapse: !this.state.collapse });
   }
 
