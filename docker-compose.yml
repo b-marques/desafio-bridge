@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  backend:
+    build: ./backend/
+    ports:
+      - "8000:8000"
+    environment:
+      ENV: production
+
+  frontend:
+    build: ./frontend/
+    ports:
+      - "3000:3000"
+    environment:
+      ENV_NODE: production
