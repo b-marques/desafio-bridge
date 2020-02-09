@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Input } from "reactstrap";
+import "./styles.css";
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -19,12 +20,12 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div style={{ display: "flex" }}>
+      <div className="inputContainer">
         <Input
+          className="input"
           type="search"
           name="search"
-          style={{ marginRight: "0.5rem", minWidth: "300px" }}
-          placeholder="Digite o nome de um repositório..."
+          placeholder="Digite o nome do repositório..."
           onKeyPress={event => {
             if (event.key === "Enter") {
               this.search();

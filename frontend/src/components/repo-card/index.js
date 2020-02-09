@@ -9,6 +9,7 @@ import {
   ListGroup,
   ListGroupItem
 } from "reactstrap";
+import "./styles.css";
 
 class RepoCard extends React.Component {
   constructor(props) {
@@ -55,8 +56,8 @@ class RepoCard extends React.Component {
   render() {
     return (
       <Col lg="12" xl={{ size: 10, offset: 1 }}>
-        <Card style={{ marginBottom: "0.2rem" }}>
-          <CardHeader onClick={() => this.toggle()} style={{ margin: "0rem" }}>
+        <Card className="card">
+          <CardHeader className="cardHeader" onClick={() => this.toggle()}>
             <Row>
               <Col sm="6">
                 <strong>Repositório:</strong> {this.props.name}

@@ -1,0 +1,8 @@
+.input {
+  margin-right: 0.2rem;
+  min-width: 250px;
+}
+
+.inputContainer {
+  display: flex;
+}

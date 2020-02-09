@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav } from "reactstrap";
 import SearchBar from "../search-bar";
+import "./styles.css";
 
 const Header = props => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,9 +10,9 @@ const Header = props => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md" style={{ marginBottom: "1rem" }}>
+      <Navbar className="navbar" color="light" light expand="md">
         <NavbarBrand href="/">Git fetcher</NavbarBrand>
-        <NavbarToggler onClick={toggle} style={{ margin: "0.5rem" }} />
+        <NavbarToggler className="navbarToggler" onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <SearchBar {...props} />

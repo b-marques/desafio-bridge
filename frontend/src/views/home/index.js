@@ -4,6 +4,7 @@ import RepoCard from "../../components/repo-card";
 import { Row, Col, Alert } from "reactstrap";
 import string_to_slug from "../../utils/slugify";
 import PageChanger from "../../components/page-changer";
+import "./styles.css";
 
 class Home extends React.Component {
   constructor(props) {
@@ -64,11 +65,11 @@ class Home extends React.Component {
         <Header search={this.search} handleChange={this.handleChange} />
         <Row>
           {this.state.error ? (
-            <Col style={{ margin: "1rem" }}>
+            <Col className="alertBox">
               <Alert color="danger">Nome de repositório inválido!</Alert>
             </Col>
           ) : this.state.items.length === 0 && this.state.pages ? (
-            <Col style={{ margin: "1rem" }}>
+            <Col className="alertBox">
               <Alert color="warning">Nenhum repositório encontrado!</Alert>
             </Col>
           ) : (
